@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">AD3Assignment4</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textDate">Sunday, 19 May 2019 | 4:30PM</string>
+    <string name="textCity">Bishkek, KG</string>
+    <string name="textCloude">Sunny</string>
+    <string name="textCelsiusAmount">33</string>
+    <string name="celsius">°C</string>
+    <string name="humidity">Humidity</string>
+    <string name="pressure">Pressure</string>
+    <string name="wind">Wind</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="sunset">Sunset</string>
+    <string name="daytime">DayTime</string>
+</resources>

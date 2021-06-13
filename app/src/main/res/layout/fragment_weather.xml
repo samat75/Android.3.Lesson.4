@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ContentDescription">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_graphic" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.5"
+            android:background="@drawable/bg_ll"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/text_date_fragment_weather"
+                style="@style/textDate"
+                android:text="@string/textDate"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_city_fragment_weather"
+                style="@style/textCity"
+                android:text="@string/textCity"
+                app:drawableEndCompat="@drawable/ic_facebook_places"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/image_cloud_fragment_weather"
+                style="@style/StyleImageCloude"
+                android:src="@drawable/ic_vector"
+                app:layout_constraintBottom_toTopOf="@id/image_humidity_fragment_weather"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/text_celsiusAmount_fragment_weather"
+                app:layout_constraintTop_toBottomOf="@id/text_date_fragment_weather" />
+
+
+            <TextView
+                android:id="@+id/text_cloud_fragment_weather"
+                style="@style/StyleTextCloude"
+                android:text="@string/textCloude"
+                app:layout_constraintEnd_toEndOf="@+id/image_cloud_fragment_weather"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/text_celsiusAmount_fragment_weather"
+                app:layout_constraintStart_toStartOf="@+id/image_cloud_fragment_weather"
+                app:layout_constraintTop_toBottomOf="@id/image_cloud_fragment_weather" />
+
+            <TextView
+                android:id="@+id/text_celsiusAmount_fragment_weather"
+                style="@style/StyleTextCelsiusAmount"
+                android:text="@string/textCelsiusAmount"
+                app:layout_constraintBottom_toBottomOf="@+id/image_cloud_fragment_weather"
+                app:layout_constraintLeft_toRightOf="@id/image_cloud_fragment_weather"
+                app:layout_constraintRight_toLeftOf="@id/text_celsiusUp_fragment_weather"
+                app:layout_constraintTop_toTopOf="@+id/image_cloud_fragment_weather" />
+
+
+            <TextView
+                android:id="@+id/text_celsius_fragment_weather"
+                style="@style/StyleTextCelsius"
+                android:text="@string/celsius"
+                app:layout_constraintLeft_toRightOf="@id/text_celsiusAmount_fragment_weather"
+                app:layout_constraintTop_toTopOf="@+id/text_celsiusAmount_fragment_weather" />
+
+            <TextView
+                android:id="@+id/text_celsiusUp_fragment_weather"
+                style="@style/StyleTextCelsiusUp"
+                app:layout_constraintBottom_toTopOf="@id/text_celsiusDown_fragment_weather"
+                app:layout_constraintLeft_toRightOf="@id/text_celsiusAmount_fragment_weather"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/text_celsiusAmount_fragment_weather"
+                tools:text="35°C" />
+
+            <ImageView
+                android:id="@+id/image_arrowUp_fragment_weather"
+                style="@style/StyleWrapContent"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_arrow_up"
+                app:layout_constraintLeft_toRightOf="@id/text_celsiusUp_fragment_weather"
+                app:layout_constraintTop_toTopOf="@+id/text_celsiusUp_fragment_weather" />
+
+            <TextView
+                android:id="@+id/text_celsiusDown_fragment_weather"
+                style="@style/StyleCelsiusDown"
+                app:layout_constraintBottom_toBottomOf="@+id/text_celsiusAmount_fragment_weather"
+                app:layout_constraintLeft_toRightOf="@id/text_celsiusAmount_fragment_weather"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_celsiusUp_fragment_weather"
+                tools:text="27°C" />
+
+
+            <ImageView
+                android:id="@+id/image_arrowDown_fragment_weather"
+                style="@style/StyleWrapContent"
+                android:src="@drawable/ic_arrow_down"
+                app:layout_constraintBottom_toBottomOf="@+id/text_celsiusDown_fragment_weather"
+                app:layout_constraintLeft_toRightOf="@id/text_celsiusDown_fragment_weather"
+                app:layout_constraintStart_toEndOf="@+id/text_celsiusDown_fragment_weather"
+                app:layout_constraintTop_toTopOf="@+id/text_celsiusDown_fragment_weather"
+                app:layout_constraintVertical_bias="0.727" />
+
+
+            <ImageView
+                android:id="@+id/image_humidity_fragment_weather"
+                style="@style/StyleWrapContent"
+                android:src="@drawable/ic_humidity"
+                app:layout_constraintBottom_toTopOf="@+id/image_sunRise_fragment_weather"
+                app:layout_constraintEnd_toEndOf="@+id/image_cloud_fragment_weather"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/image_pressure_fragment_weather"
+                app:layout_constraintStart_toStartOf="@+id/image_cloud_fragment_weather"
+                app:layout_constraintTop_toBottomOf="@+id/image_cloud_fragment_weather" />
+
+            <TextView
+                android:id="@+id/text_percentHumidity_fragment_weather"
+                style="@style/StyleTextPercentHumidity"
+                app:layout_constraintEnd_toEndOf="@+id/image_humidity_fragment_weather"
+                app:layout_constraintStart_toStartOf="@+id/image_humidity_fragment_weather"
+                app:layout_constraintTop_toBottomOf="@+id/image_humidity_fragment_weather"
+                tools:text="49%" />
+
+            <TextView
+                android:id="@+id/text_humidity_fragment_weather"
+                style="@style/StyleTextHumidity"
+                app:layout_constraintEnd_toEndOf="@+id/text_percentHumidity_fragment_weather"
+                app:layout_constraintStart_toStartOf="@+id/text_percentHumidity_fragment_weather"
+                app:layout_constraintTop_toBottomOf="@+id/text_percentHumidity_fragment_weather"
+                android:text="@string/humidity" />
+
+            <ImageView
+                android:id="@+id/image_pressure_fragment_weather"
+                style="@style/StyleWrapContent"
+                android:src="@drawable/ic_pressure"
+                app:layout_constraintEnd_toEndOf="@+id/text_celsiusAmount_fragment_weather"
+                app:layout_constraintLeft_toRightOf="@id/image_humidity_fragment_weather"
+                app:layout_constraintRight_toLeftOf="@id/image_wind_fragment_weather"
+                app:layout_constraintStart_toStartOf="@+id/text_celsiusAmount_fragment_weather"
+                app:layout_constraintTop_toTopOf="@id/image_humidity_fragment_weather" />
+
+            <TextView
+                android:id="@+id/text_mBarPressure_fragment_weather"
+                style="@style/StyleTextMBarPressure"
+                app:layout_constraintEnd_toEndOf="@+id/image_pressure_fragment_weather"
+                app:layout_constraintLeft_toRightOf="@id/text_percentHumidity_fragment_weather"
+                app:layout_constraintRight_toLeftOf="@id/text_kmHWind_fragment_weather"
+                app:layout_constraintStart_toStartOf="@+id/image_pressure_fragment_weather"
+                app:layout_constraintTop_toBottomOf="@id/image_pressure_fragment_weather"
+                app:layout_constraintTop_toTopOf="@id/text_percentHumidity_fragment_weather"
+                tools:text="1,007mBar" />
+
+            <TextView
+                android:id="@+id/text_pressure_fragment_weather"
+                style="@style/StyleTextPressure"
+                app:layout_constraintEnd_toEndOf="@+id/text_mBarPressure_fragment_weather"
+                app:layout_constraintLeft_toRightOf="@id/text_humidity_fragment_weather"
+                app:layout_constraintRight_toLeftOf="@id/text_wind_fragment_weather"
+                app:layout_constraintStart_toStartOf="@+id/text_mBarPressure_fragment_weather"
+                app:layout_constraintTop_toTopOf="@+id/text_humidity_fragment_weather"
+                android:text="@string/pressure" />
+
+            <TextView
+                android:id="@+id/text_wind_fragment_weather"
+                style="@style/StyleWrapContent"
+                android:fontFamily="@font/barlow_regular"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/text_kmHWind_fragment_weather"
+                app:layout_constraintLeft_toRightOf="@id/text_pressure_fragment_weather"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_kmHWind_fragment_weather"
+                app:layout_constraintTop_toTopOf="@+id/text_pressure_fragment_weather"
+                android:text="@string/wind" />
+
+
+            <ImageView
+                android:id="@+id/image_wind_fragment_weather"
+                style="@style/StyleWrapContent"
+                android:src="@drawable/ic__wind"
+                app:layout_constraintEnd_toEndOf="@+id/text_celsiusUp_fragment_weather"
+                app:layout_constraintLeft_toRightOf="@id/image_pressure_fragment_weather"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_celsiusUp_fragment_weather"
+                app:layout_constraintTop_toTopOf="@id/image_pressure_fragment_weather" />
+
+            <TextView
+                android:id="@+id/text_kmHWind_fragment_weather"
+                style="@style/StyleTextKNWind"
+                app:layout_constraintEnd_toEndOf="@+id/image_wind_fragment_weather"
+                app:layout_constraintLeft_toRightOf="@id/text_mBarPressure_fragment_weather"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/image_wind_fragment_weather"
+                app:layout_constraintTop_toTopOf="@+id/text_mBarPressure_fragment_weather"
+                tools:text="23km/h" />
+
+
+            <ImageView
+                android:id="@+id/image_sunRise_fragment_weather"
+                style="@style/StyleWrapContent"
+                android:src="@drawable/ic_sunrise"
+                app:layout_constraintBottom_toTopOf="@id/recyclerWeather_fragment_weather"
+                app:layout_constraintEnd_toEndOf="@+id/text_humidity_fragment_weather"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_humidity_fragment_weather"
+                app:layout_constraintTop_toBottomOf="@id/image_humidity_fragment_weather" />
+
+
+            <TextView
+                android:id="@+id/text_sunRiseTime_fragment_weather"
+                style="@style/StyleTextSunRise"
+                app:layout_constraintEnd_toEndOf="@+id/image_sunRise_fragment_weather"
+                app:layout_constraintStart_toStartOf="@+id/image_sunRise_fragment_weather"
+                app:layout_constraintTop_toBottomOf="@+id/image_sunRise_fragment_weather"
+                tools:text="6:03AM" />
+
+            <TextView
+                android:id="@+id/text_sunRise_fragment_weather"
+                style="@style/StyleWrapContent"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/text_sunRiseTime_fragment_weather"
+                app:layout_constraintStart_toStartOf="@+id/text_sunRiseTime_fragment_weather"
+                app:layout_constraintTop_toBottomOf="@+id/text_sunRiseTime_fragment_weather"
+                android:text="@string/sunrise" />
+
+            <ImageView
+                android:id="@+id/image_sunSet_fragment_weather"
+                style="@style/StyleWrapContent"
+                android:src="@drawable/ic_sun_rise"
+                app:layout_constraintEnd_toEndOf="@+id/text_pressure_fragment_weather"
+                app:layout_constraintStart_toStartOf="@+id/text_pressure_fragment_weather"
+                app:layout_constraintTop_toTopOf="@+id/image_sunRise_fragment_weather" />
+
+            <TextView
+                android:id="@+id/text_sunSetTime_fragment_weather"
+                style="@style/StyleTextSunset"
+                app:layout_constraintEnd_toEndOf="@+id/image_sunSet_fragment_weather"
+                app:layout_constraintStart_toStartOf="@+id/image_sunSet_fragment_weather"
+                app:layout_constraintTop_toTopOf="@id/text_sunRiseTime_fragment_weather"
+                tools:layout_editor_absoluteY="268dp"
+                tools:text="7:05PM" />
+
+            <TextView
+                android:id="@+id/text_sunSet_fragment_weather"
+                style="@style/StyleWrapContent"
+                android:fontFamily="@font/barlow_regular"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/text_sunSetTime_fragment_weather"
+                app:layout_constraintStart_toStartOf="@+id/text_sunSetTime_fragment_weather"
+                app:layout_constraintTop_toTopOf="@+id/text_sunRise_fragment_weather"
+                android:text="@string/sunset" />
+
+
+            <ImageView
+                android:id="@+id/image_clock_fragment_weather"
+                style="@style/StyleWrapContent"
+                android:src="@drawable/ic_sand_clock"
+                app:layout_constraintEnd_toEndOf="@+id/text_wind_fragment_weather"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_wind_fragment_weather"
+                app:layout_constraintTop_toTopOf="@+id/image_sunSet_fragment_weather" />
+
+            <TextView
+                android:id="@+id/text_clock_fragment_weather"
+                style="@style/StyleTextClock"
+                app:layout_constraintEnd_toEndOf="@+id/image_clock_fragment_weather"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/image_clock_fragment_weather"
+                app:layout_constraintTop_toTopOf="@+id/text_sunSetTime_fragment_weather"
+                android:text="13h1m"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/text_dayTime_fragment_weather"
+                style="@style/StyleTextDaytime"
+                app:layout_constraintEnd_toEndOf="@+id/text_clock_fragment_weather"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_clock_fragment_weather"
+                app:layout_constraintTop_toTopOf="@+id/text_sunSet_fragment_weather"
+                android:text="@string/daytime" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerWeather_fragment_weather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:listitem="@layout/item_celsius_of_day" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
